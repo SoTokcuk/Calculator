@@ -29,4 +29,49 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="408dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/btn_orange"
+            android:layout_marginEnd="8dp"
+            android:foreground="@drawable/button_border"
+            android:text="@string/back" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="12dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/plusminus"
+            android:foreground="@drawable/button_border"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/btn_orange"
+            android:layout_marginEnd="8dp"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="109dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/btn_orange"
+            android:textSize="25sp"
+            android:text="@string/clear" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
