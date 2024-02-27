@@ -4,4 +4,5 @@
     <string name="clear">C</string>
     <string name="error">Ошибка</string>
     <string name="plusminus">±</string>
+    <string name="invert">1/x</string>
 </resources>

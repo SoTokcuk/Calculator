@@ -5,4 +5,5 @@
     <string name="clear">C</string>
     <string name="error">Error</string>
     <string name="plusminus">±</string>
+    <string name="invert">1/x</string>
 </resources>

@@ -93,7 +93,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/white"
             android:foreground="@drawable/button_border"
-            android:text="@string/back"
+            android:text="1"
             android:textColor="@color/btn_orange"
             android:textSize="25sp" />
 
@@ -105,19 +105,19 @@
             android:layout_weight="1"
             android:backgroundTint="@color/white"
             android:foreground="@drawable/button_border"
-            android:text="@string/plusminus"
+            android:text="2"
             android:textColor="@color/btn_orange"
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
             android:foreground="@drawable/button_border"
-            android:text="@string/plusminus"
+            android:text="3"
             android:textColor="@color/btn_orange"
             android:textSize="25sp" />
 
@@ -129,7 +129,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/white"
             android:foreground="@drawable/button_border"
-            android:text="@string/plusminus"
+            android:text="√"
             android:textColor="@color/btn_orange"
             android:textSize="25sp" />
 
@@ -141,9 +141,9 @@
             android:layout_weight="1"
             android:backgroundTint="@color/white"
             android:foreground="@drawable/button_border"
-            android:text="@string/plusminus"
+            android:text="@string/invert"
             android:textColor="@color/btn_orange"
-            android:textSize="25sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
