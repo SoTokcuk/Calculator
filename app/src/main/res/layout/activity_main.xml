@@ -50,8 +50,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="@color/btn_orange"
-            android:text="@string/clear"
-            android:textSize="25sp" />
+            android:text="="
+            android:textSize="26sp" />
     </LinearLayout>
 
     <TextView
