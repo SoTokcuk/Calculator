@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="back">back</string>
+    <string name="back">Back</string>
     <string name="clear">C</string>
     <string name="error">Error</string>
     <string name="plusminus">±</string>
