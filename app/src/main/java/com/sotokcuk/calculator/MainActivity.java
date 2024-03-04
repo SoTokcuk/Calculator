@@ -222,7 +222,9 @@ public class MainActivity extends AppCompatActivity {
                     lastNumber = matcher.group();
                 }
                 if (!lastNumber.isEmpty()) {
-                    if (lastNumber.charAt(0) == '+') {
+                    if (lastNumber.charAt(0) == '-') {
+                        invertedNumber = "+" + lastNumber.substring(1);
+                    } else if (lastNumber.charAt(0) == '+') {
                         invertedNumber = "-" + lastNumber.substring(1);
                     } else {
                         invertedNumber = "-" + lastNumber;
@@ -243,9 +245,51 @@ public class MainActivity extends AppCompatActivity {
                 while (matcher.find()) {
                     lastNumber = matcher.group();
                 }
-                if (!lastNumber.contains(".")) { // Проверка, что в числе еще нет точки
+                if (!lastNumber.contains(".") && exp.length() > 0 && exp.charAt(exp.length() - 1) != '.') {
                     exp = exp.substring(0, exp.lastIndexOf(lastNumber)) + lastNumber + "." + exp.substring(exp.lastIndexOf(lastNumber) + lastNumber.length());
                     operation.setText(exp);
+                }
+            }
+        });
+        btn_sqrt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String operationText = operation.getText().toString();
+                if (operationText != "") {
+                    try {
+                        Expression exp = new ExpressionBuilder(operation.getText().toString()).build();
+                        double res = exp.evaluate();
+                        res = Math.sqrt(res);
+                        long longRes = (long) res;
+                        if ((double) longRes == res) {
+                            result.setText(Long.toString(longRes));
+                        } else {
+                            result.setText(Double.toString(res));
+                        }
+                    } catch (Exception e) {
+                        result.setText(resources.getString(R.string.error));
+                    }
+                }
+            }
+        });
+        btn_invert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String operationText = operation.getText().toString();
+                if (operationText != "") {
+                    try {
+                        Expression exp = new ExpressionBuilder(operation.getText().toString()).build();
+                        double res = exp.evaluate();
+                        res = 1 / res;
+                        long longRes = (long) res;
+                        if ((double) longRes == res) {
+                            result.setText(Long.toString(longRes));
+                        } else {
+                            result.setText(Double.toString(res));
+                        }
+                    } catch (Exception e) {
+                        result.setText(resources.getString(R.string.error));
+                    }
                 }
             }
         });
