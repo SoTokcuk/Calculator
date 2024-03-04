@@ -1,12 +1,18 @@
 package com.sotokcuk.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,11 +38,18 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_ms;
     private Button btn_mplus;
     private Button btn_mminus;
+    private Button btn_minus;
+    private Button btn_plus;
+    private Button btn_multiply;
+    private Button btn_div;
+    private Button btn_sqrt;
+    private Button btn_invert;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Resources resources = getResources();
         result = findViewById(R.id.result);
         operation = findViewById(R.id.operation);
         btn_0 = findViewById(R.id.button_0);
@@ -59,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
         btn_ms = findViewById(R.id.button_ms);
         btn_mplus = findViewById(R.id.button_mplus);
         btn_mminus = findViewById(R.id.button_mminus);
+        btn_plus = findViewById(R.id.button_plus);
+        btn_minus = findViewById(R.id.button_minus);
+        btn_multiply = findViewById(R.id.button_multiply);
+        btn_div = findViewById(R.id.button_div);
+        btn_sqrt = findViewById(R.id.button_sqrt);
+        btn_invert = findViewById(R.id.button_invert);
 
         btn_0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,6 +139,117 @@ public class MainActivity extends AppCompatActivity {
                 operation.append("9");
             }
         });
+        btn_minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operation.append("-");
+            }
+        });
+        btn_plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operation.append("+");
+            }
+        });
+        btn_multiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operation.append("*");
+            }
+        });
+        btn_div.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operation.append("/");
+            }
+        });
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s = operation.getText().toString();
+                if (s != "") {
+                    operation.setText(s.substring(0, s.length()-1));
+                }
+            }
+        });
+        btn_clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operation.setText("");
+                result.setText("");
+            }
+        });
+        result.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String resultText = result.getText().toString();
+                if (resultText != resources.getString(R.string.error) && resultText != "") {
+                    operation.setText(resultText);
+                    result.setText("");
+                }
+            }
+        });
+        btn_result.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String operationText = operation.getText().toString();
+                if (operationText != "") {
+                    try {
+                        Expression exp = new ExpressionBuilder(operation.getText().toString()).build();
+                        double res = exp.evaluate();
+                        long longRes = (long) res;
+                        if ((double) longRes == res) {
+                            result.setText(Long.toString(longRes));
+                        } else {
+                            result.setText(Double.toString(res));
+                        }
+                    } catch (Exception e) {
+                        result.setText(resources.getString(R.string.error));
+                    }
+                }
+            }
+        });
+        btn_plusminus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String invertedNumber;
+                String exp = operation.getText().toString();
+                String pattern = "(-|\\+)?\\d+(\\.\\d+)?";
+                Pattern regexPattern = Pattern.compile(pattern);
+                Matcher matcher = regexPattern.matcher(exp);
+                String lastNumber = "";
+                while (matcher.find()) {
+                    lastNumber = matcher.group();
+                }
+                if (!lastNumber.isEmpty()) {
+                    if (lastNumber.charAt(0) == '+') {
+                        invertedNumber = "-" + lastNumber.substring(1);
+                    } else {
+                        invertedNumber = "-" + lastNumber;
+                    }
+                    exp = exp.substring(0, exp.lastIndexOf(lastNumber)) + invertedNumber + exp.substring(exp.lastIndexOf(lastNumber) + lastNumber.length());
+                    operation.setText(exp);
+                }
+            }
+        });
+        btn_point.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String exp = operation.getText().toString();
+                String pattern = "(-|\\+)?\\d+(\\.\\d+)?";
+                Pattern regexPattern = Pattern.compile(pattern);
+                Matcher matcher = regexPattern.matcher(exp);
+                String lastNumber = "";
+                while (matcher.find()) {
+                    lastNumber = matcher.group();
+                }
+                if (!lastNumber.contains(".")) { // Проверка, что в числе еще нет точки
+                    exp = exp.substring(0, exp.lastIndexOf(lastNumber)) + lastNumber + "." + exp.substring(exp.lastIndexOf(lastNumber) + lastNumber.length());
+                    operation.setText(exp);
+                }
+            }
+        });
+
 
     }
 }
