@@ -57,7 +57,7 @@
     <TextView
         android:id="@+id/result"
         android:layout_width="match_parent"
-        android:layout_height="200sp"
+        android:layout_height="150sp"
         android:layout_marginStart="16sp"
         android:layout_marginEnd="16sp"
         android:layout_marginBottom="30sp"
@@ -73,7 +73,7 @@
     <TextView
         android:id="@+id/operation"
         android:layout_width="match_parent"
-        android:layout_height="252sp"
+        android:layout_height="150sp"
         android:layout_marginStart="16sp"
         android:layout_marginTop="16sp"
         android:layout_marginEnd="16sp"
@@ -200,7 +200,7 @@
             android:foreground="@drawable/button_border"
             android:text="@string/invert"
             android:textColor="@color/btn_orange"
-            android:textSize="30sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -354,7 +354,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80sp"
+        android:layout_height="60sp"
         android:layout_marginStart="4sp"
         android:layout_marginTop="4sp"
         android:layout_marginEnd="4sp"
@@ -376,7 +376,7 @@
             android:foreground="@drawable/button_border"
             android:text="MC"
             android:textColor="@color/btn_orange"
-            android:textSize="25sp" />
+            android:textSize="13sp" />
 
         <Button
             android:id="@+id/button_mr"
@@ -388,7 +388,7 @@
             android:foreground="@drawable/button_border"
             android:text="MR"
             android:textColor="@color/btn_orange"
-            android:textSize="25sp" />
+            android:textSize="13sp" />
 
         <Button
             android:id="@+id/button_ms"
@@ -400,7 +400,7 @@
             android:foreground="@drawable/button_border"
             android:text="MS"
             android:textColor="@color/btn_orange"
-            android:textSize="25sp" />
+            android:textSize="13sp" />
 
         <Button
             android:id="@+id/button_mplus"
@@ -412,7 +412,7 @@
             android:foreground="@drawable/button_border"
             android:text="M+"
             android:textColor="@color/btn_orange"
-            android:textSize="25sp" />
+            android:textSize="13sp" />
 
         <Button
             android:id="@+id/button_mminus"
@@ -423,7 +423,7 @@
             android:foreground="@drawable/button_border"
             android:text="M-"
             android:textColor="@color/btn_orange"
-            android:textSize="25sp" />
+            android:textSize="13sp" />
     </LinearLayout>
 
 
