@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_div;
     private Button btn_sqrt;
     private Button btn_invert;
+    private String memory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -293,7 +294,71 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        btn_mc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                memory = "";
+            }
+        });
+        btn_ms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                memory = result.getText().toString();
+            }
+        });
+        btn_mr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String exp = operation.getText().toString();
+                if(memory != "") {
+                    operation.setText(exp + "+" + memory);
+                }
+            }
+        });
+        btn_mplus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (result.getText().toString() != "") {
+                    if (memory != "") {
+                        try {
+                            String expr = result.getText().toString() + "+" + memory;
+                            Expression exp = new ExpressionBuilder(expr).build();
+                            double res = exp.evaluate();
+                            long longRes = (long) res;
+                            if ((double) longRes == res) {
+                                result.setText(Long.toString(longRes));
+                            } else {
+                                result.setText(Double.toString(res));
+                            }
+                        } catch (Exception e) {
+                            result.setText(resources.getString(R.string.error));
+                        }
+                    }
+                }
+            }
+        });
+        btn_mminus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (result.getText().toString() != "") {
+                    if (memory != "") {
+                        try {
+                            String expr = result.getText().toString() + "-" + memory;
+                            Expression exp = new ExpressionBuilder(expr).build();
+                            double res = exp.evaluate();
+                            long longRes = (long) res;
+                            if ((double) longRes == res) {
+                                result.setText(Long.toString(longRes));
+                            } else {
+                                result.setText(Double.toString(res));
+                            }
+                        } catch (Exception e) {
+                            result.setText(resources.getString(R.string.error));
+                        }
+                    }
+                }
+            }
+        });
 
     }
 }
