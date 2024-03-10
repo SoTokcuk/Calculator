@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_sqrt;
     private Button btn_invert;
     private String memory;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -168,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String s = operation.getText().toString();
-                if (s != "") {
+                if (!s.equals("")) {
                     operation.setText(s.substring(0, s.length()-1));
                 }
             }
@@ -361,4 +363,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 }

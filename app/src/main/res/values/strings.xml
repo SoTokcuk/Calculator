@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Calculator</string>
+    <string name="app_name">Калькулятор</string>
     <string name="back">Back</string>
     <string name="clear">C</string>
     <string name="error">Ошибка</string>
