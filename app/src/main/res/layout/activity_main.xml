@@ -19,7 +19,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHeight_percent="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -28,6 +28,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="5sp"
+            android:autoSizeMinTextSize="25sp"
+            android:autoSizeMaxTextSize="55sp"
+            android:autoSizeTextType="uniform"
             android:layout_weight="0.5"
             android:text=""
             android:textSize="25sp" />
@@ -38,6 +41,9 @@
             android:layout_height="0dp"
             android:layout_weight="0.5"
             android:background="@drawable/outline"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="25sp"
+            android:autoSizeMaxTextSize="55sp"
             android:outlineProvider="bounds"
             android:text=""
             android:textSize="25sp" />
@@ -48,7 +54,7 @@
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.07"
         android:layout_marginStart="8sp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
@@ -57,39 +63,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <TextView
             android:id="@+id/button_0"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="0"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_point"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="8sp"
             android:layout_marginStart="8sp"
             android:layout_weight="0.25"
-            android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
+            android:textAlignment="center"
             android:text="."
+            android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_result"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:autoSizeTextType="uniform"
-            android:backgroundTint="@color/btn_orange"
-            android:foreground="@drawable/button_border2"
+            android:background="@color/btn_orange"
+            android:textColor="@color/white"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
+            android:textAlignment="center"
             android:text="="
             android:textSize="20sp" />
     </LinearLayout>
@@ -98,7 +113,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.07"
         android:layout_marginEnd="8sp"
         android:layout_marginStart="8sp"
         android:layout_marginBottom="8sp"
@@ -108,38 +123,48 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <TextView
             android:id="@+id/button_back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
             android:text="@string/back"
             android:textColor="@color/btn_orange"
-            android:autoSizeTextType="uniform"
-            android:textSize="20sp" />
+            android:autoSizeTextType="uniform" />
 
-        <Button
+        <TextView
             android:id="@+id/button_plusminus"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:layout_marginEnd="8sp"
             android:layout_marginStart="8sp"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="@string/plusminus"
             android:textColor="@color/btn_orange"
+
             android:autoSizeTextType="uniform"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_c"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="0.25"
-            android:backgroundTint="@color/btn_orange"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:background="@color/btn_orange"
             android:autoSizeTextType="uniform"
             android:text="@string/clear"
             android:textSize="20sp" />
@@ -152,76 +177,90 @@
         android:layout_marginStart="8sp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.07"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <TextView
             android:id="@+id/button_1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.15"
-            android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
-            android:text="1"
+            android:background="@color/white"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
+            android:textAlignment="center"
             android:textColor="@color/btn_orange"
             android:autoSizeTextType="uniform"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:text="1" />
 
-        <Button
+        <TextView
             android:id="@+id/button_2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8sp"
             android:layout_marginEnd="8sp"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="0.15"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:textAlignment="center"
+            android:background="@color/white"
             android:text="2"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.15"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:text="3"
             android:autoSizeTextType="uniform"
+            android:textAlignment="center"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_sqrt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8sp"
             android:layout_marginEnd="8sp"
             android:layout_weight="0.15"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:textAlignment="center"
+            android:background="@color/white"
             android:text="√"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_invert"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.05"
+            android:layout_weight="0.15"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
             android:text="@string/invert"
             android:autoSizeTextType="uniform"
+            android:textAlignment="center"
             android:textColor="@color/btn_orange"
-            android:textSize="15sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -232,52 +271,61 @@
         android:layout_marginStart="8sp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.07"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <TextView
             android:id="@+id/button_4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
             android:text="4"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="8sp"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_marginStart="8sp"
+
             android:layout_weight="0.25"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
             android:text="5"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_6"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="6"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_plus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -285,20 +333,26 @@
             android:layout_marginEnd="8sp"
             android:layout_marginStart="8sp"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="+"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_multiply"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="×"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
@@ -312,52 +366,61 @@
         android:layout_marginEnd="8sp"
         android:layout_marginStart="8sp"
         android:layout_marginBottom="8sp"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.07"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <TextView
             android:id="@+id/button_7"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:text="7"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_8"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="8sp"
             android:layout_marginStart="8sp"
             android:layout_weight="0.25"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="8"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_9"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="9"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_minus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -365,20 +428,24 @@
             android:layout_marginStart="8sp"
             android:layout_weight="0.25"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="-"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_div"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="÷"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="40sp"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
@@ -392,72 +459,86 @@
         android:layout_marginStart="8sp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.05"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <TextView
             android:id="@+id/button_mc"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.15"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="35sp"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="MC"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_mr"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="8sp"
             android:layout_marginStart="8sp"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="35sp"
             android:layout_weight="0.15"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="MR"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_ms"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.15"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="35sp"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="MS"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_mplus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="8sp"
             android:layout_marginStart="8sp"
-            android:layout_weight="0.1"
+            android:layout_weight="0.15"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="35sp"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="M+"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
             android:textSize="20sp" />
 
-        <Button
+        <TextView
             android:id="@+id/button_mminus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.15"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="35sp"
             android:backgroundTint="@color/white"
-            android:foreground="@drawable/button_border"
+            android:background="@color/white"
+            android:textAlignment="center"
             android:text="M-"
             android:autoSizeTextType="uniform"
             android:textColor="@color/btn_orange"
